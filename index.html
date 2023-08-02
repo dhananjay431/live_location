@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Live Share</title>
+    <link
+      rel="icon"
+      id="appFavicon"
+      type="image/x-icon"
+      href="https://www.oneqlik.in/faviconn.ico"
+    />
+    <!-- map start typeOfVehicle -->
+    <link rel="stylesheet" href="./assets/css/maplibre-gl.css" />
+    <script src="./assets/js/maplibre-gl.js"></script>
+    <script src="./assets/js/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/dayjs.min.js"></script>
+    <!-- map end  -->
+    <!-- socket js  -->
+    <script src="./assets/js/socket.io.js"></script>
+
+    <!-- bootstrap lib  -->
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    /> -->
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <div id="object-information-container" data-status="stopped">
+      <div class="object-information-box">
+        <!-- <div class="object-img-box">
+            <div class="oib-name-1" id="object-name-1"></div>
+          </div> -->
+        <div class="object-detail-box" data-status="stopped">
+          <div class="oib-header">
+            <div class="oib-name" id="object-name"></div>
+            <div
+              id="oib-status-box"
+              class="oib-status-box"
+              data-status="stopped"
+            ></div>
+          </div>
+          <div class="oib-widget" data-refer="status">
+            <div class="oib-widget-label" id="object-status-info"></div>
+            <div class="oib-widget-value">
+              <span class="status-since-label">Since</span
+              ><span id="duration" class="status-time-label"></span>
+            </div>
+          </div>
+          <div class="oib-widget" data-refer="speed">
+            <div class="oib-widget-label">Speed</div>
+            <div class="oib-widget-value"><span id="speed"></span> km/h</div>
+          </div>
+
+          <!-- <div
+              class="oib-widget"
+              data-refer="driver-mobile"
+              style="display: none"
+            >
+              <div class="oib-widget-label">Mobile No</div>
+              <div class="oib-widget-value" id="driver-mobile">--</div>
+            </div> -->
+          <div
+            class="oib-widgets"
+            data-refer="extra-data"
+            style="display: none"
+          ></div>
+        </div>
+        <div class="object-location-information-box">
+          <div class="oib-header">
+            <div class="oib-name">Location</div>
+          </div>
+          <div class="oib-widget-location-box">
+            <div
+              style="text-align: start"
+              class="oib-widget"
+              data-refer="location"
+            >
+              <div id="address" class="oib-widget-label"></div>
+            </div>
+            <div class="oib-widget" data-refer="last-updated-point">
+              <div class="oib-widget-lebel">
+                Last Updated At <span id="lastUpdate"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script> -->
+  </body>
+</html>
